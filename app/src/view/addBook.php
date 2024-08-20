@@ -70,8 +70,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
     <br><br>
     <div class='form-group'>
-      <label>Year Published</label>
-      <input type='number' name='yearPublished' class='form-control' value='<?php echo $yearPublished ?>'>
+      <label>Date Published</label>
+      <input type='date' name='yearPublished' class='form-control' value='<?php echo $yearPublished ?>'>
 
     </div>
     <br><br>
