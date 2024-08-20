@@ -25,13 +25,13 @@ class AuthController
         $user = $usermodel->getUser($email);
 
         if (empty($email) || empty($user['email'])) {
-            $_SESSION['error1'] = 'Email Error!';
+            $_SESSION['error1'] = 'Invalid Email!';
             throw new Exception("Input Error");
         }
 
 
         if (empty($password) || !password_verify($password, $user['password'])) {
-            $_SESSION['error2'] = 'Password Error!';
+            $_SESSION['error2'] = 'invalid Password!';
             throw new Exception("Input Error");
         }
     }
