@@ -1,6 +1,6 @@
 <?php
 session_start();
-require '../../bootsrap.php';
+
 
 use App\Controller\BookController;
 
@@ -16,14 +16,22 @@ $imgContent = "";
 
 $bookController1 = new BookController();
 
+
+
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   if (isset($_FILES['image']) && $_FILES['image']['error'] == 0) {
-    $imagePath = 'uploads/' . $_FILES['image']['name'];
-    if (!file_exists(dirname($imagePath))) {
-      mkdir(dirname($imagePath));
-      move_uploaded_file($_FILES['image']['tmp_name'], $imagePath);
+    $imageDir = 'uploads/';
+    $imagefile = basename($_FILES['image']['name']);
+    $uploadFile = $imageDir . $imagefile;
+    var_dump($uploadFile);
+    if (!file_exists($imageDir)) {
+      mkdir($imageDir);
     }
-    $imgContent = $imagePath;
+    if (move_uploaded_file($_FILES['image']['tmp_name'], $uploadFile)) {
+
+      $imgContent = $imagefile;
+    }
   }
 
   $title = $_POST['title'];
@@ -45,11 +53,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <html>
 
 <head>
-  <link rel="stylesheet" href="css\addBook.css">
+  <link rel="stylesheet" href="app\src\view\css\addBook.css">
 </head>
 
 <body>
-  <form method='POST' action='<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>' enctype='multipart/form-data'>
+  <form method='POST' action='/addBook' enctype='multipart/form-data'>
 
     <div class='form-group'>
       <label>Book title</label>
@@ -65,7 +73,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <br><br>
     <div class='form-group'>
       <label>Book Genre</label>
-      <input type='text' name='genre' class='form-control' value='<?php echo $genre ?>'>
+      <input list="browsers" value="<?php echo $genre ?>" name='genre' class='form-control' name="myBrowser" />
+      <datalist id="browsers">
+        <option value="Crime">
+        <option value="Adventure">
+        <option value="Religious">
+        <option value="Music">
+        <option value="Tech">
+        <option value="Education">
+      </datalist>
+
 
     </div>
     <br><br>

@@ -18,6 +18,10 @@ h2 {
   text-align: center;
 }
 
+.image {
+  max-width: 100%;
+}
+
 /* Image styling */
 .pic {
   display: block;
@@ -54,7 +58,7 @@ h2 {
   border-radius: 4px;
   width: 300px;
   position: relative;
-  right: 130px;
+  right: 10px;
 }
 
 .btn {
@@ -78,7 +82,7 @@ h2 {
 .grid-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+
   gap: 20px;
 }
 
@@ -88,7 +92,7 @@ h2 {
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 200px;
-  text-align: center;
+
   padding: 10px;
   transition: transform 0.2s;
 }
@@ -107,15 +111,9 @@ h2 {
   font-weight: 600;
   margin: 10px 0 5px 0;
   color: #333;
-  font-size: 13px;
-}
-
-.bold {
-  font-weight: 200;
   font-size: 10px;
-  color: #555;
+  text-align: left;
 }
-
 /* Link styling */
 .book-link {
   text-decoration: none;

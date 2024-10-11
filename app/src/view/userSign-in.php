@@ -1,6 +1,6 @@
 <?php
 session_start();
-require '../../bootsrap.php';
+
 
 use App\Controller\UserController;
 
@@ -48,12 +48,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <html>
 
 <head>
-    <link rel='stylesheet' href='css\userSign-in.css'>
+    <link rel='stylesheet' href='app\src\view\css\userSign-in.css'>
 </head>
 
 <body>
 
-    <form method='post' action='<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>'>
+    <form method='post' action='\app\src\view\userSign-in.php'>
         <?php if (isset($_SESSION['err'])) { ?>
             <span class="err"><?php echo $_SESSION['err'] ?></span>
         <?php unset($_SESSION['err']);

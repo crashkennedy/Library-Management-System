@@ -7,7 +7,7 @@ use App\model\UserModel;
 use Exception;
 
 
-class userController
+class UserController
 {
 
     private $usermodel;

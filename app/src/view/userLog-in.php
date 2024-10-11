@@ -1,15 +1,13 @@
 <?php
 session_start();
-require '../../bootsrap.php';
 
 use App\Controller\AuthController;
 
+$authCont = new AuthController();
 
 $email = "";
 $password = "";
 
-
-$authCont = new AuthController();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
@@ -18,9 +16,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     try {
         $authCont->loginUser($email, $password);
-
         $_SESSION['log-in'] = "logged-in";
-        header('Location: \app\src\view\homePage.php');
+        header('Location:\app\src\view\homePage.php ');
     } catch (\Throwable $e) {
         $error = $e->getMessage();
     }
@@ -32,13 +29,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <html>
 
 <head>
-    <link rel='stylesheet' href='css\userLog-in.css'>
+    <link rel='stylesheet' href='app\src\view\css\userLog-in.css'>
+
 </head>
 
 <body>
 
 
-    <form action='<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>' method='post'>
+    <form action='\app\src\view\homePage.php' method='post' enctype='multipart/form-data'>
 
         <label> Email: </label>
         <input type='text' name='email' value='<?php echo $email ?>'>

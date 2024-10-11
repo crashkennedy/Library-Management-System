@@ -7,9 +7,9 @@ use App\model\Book;
 use mysqli;
 
 
-if (empty($_SESSION['log-in'])) {
-    header('Location:\app\src\view\userLog-in.php');
-}
+// if (empty($_SESSION['log-in'])) {
+//     header('Location:\app\src\view\userLog-in.php');
+// }
 
 class BookController
 {
@@ -54,9 +54,18 @@ class BookController
             $bookModel->addBook($title, $author, $genre, $yearPublished, $available, $imgPath);
         }
 
+        header('Location: \app\src\view\homePage.php ');
+    }
 
-        if ($bookModel->getBook($title)) {
-            throw new Exception('A Book with this title already exists!');
-        }
+    public function removeBook($id)
+    {
+        $bookModel = $this->bookModel;
+        $bookModel->deleteBook($id);
+    }
+
+    public function updateBook($title, $author, $genre, $yearPublished, $available, $imagePath, $id)
+    {
+        $bookModel = $this->bookModel;
+        $bookModel->editBook($title, $author, $genre, $yearPublished, $available, $imagePath, $id);
     }
 }
