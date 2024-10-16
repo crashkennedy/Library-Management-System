@@ -92,17 +92,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     </div>
     <br><br>
-    <!-- <div class='form-group'>
-      <label>Available</label>
-      <input type='radio' name='available' class='sel' checked='checked' <?php if (isset($available) && $available == 'available') {
-                                                                            echo 'checked';
-                                                                          } ?> value='available'>
-      <label>Unavailable</label>
-      <input type='radio' name='available' class='sel' <?php if (isset($available)) {
-                                                          echo 'checked';
-                                                        } ?>>
-
-    </div> -->
     <br><br>
     <div class='form-group'>
       <label>Book Image</label><br>

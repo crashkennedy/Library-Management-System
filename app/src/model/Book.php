@@ -51,9 +51,6 @@ class Book
         $stmt = "SELECT * FROM Library WHERE title = '$title' ";
         $result = $conn->query($stmt);
         $row = $result->fetch_assoc();
-        // foreach ($row as $val) {
-        //     $value = $val;
-        // }
         return $row;
     }
 
