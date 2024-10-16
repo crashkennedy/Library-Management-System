@@ -1,0 +1,17 @@
+{
+  "name": "binurem/phppractice",
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/src"
+    }
+  },
+  "authors": [
+    {
+      "name": "Ken"
+    }
+  ],
+  "require": {
+    "webmozart/assert": "*",
+    "beberlei/assert": "*"
+  }
+}
