@@ -29,14 +29,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <html>
 
 <head>
-    <link rel='stylesheet' href='app\src\view\css\userLog-in.css'>
+    <link rel='stylesheet'
+        href='app\src\view\css\userLog-in.css'>
 
 </head>
 
 <body>
 
 
-    <form action='\app\src\view\homePage.php' method='post' enctype='multipart/form-data'>
+    <form action='\app\src\view\homePage.php' method='post' enctype="multipart/form-data">
 
         <label> Email: </label>
         <input type='text' name='email' value='<?php echo $email ?>'>
